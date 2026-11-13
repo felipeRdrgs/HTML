@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartCoffee</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <div class="cabecalho">
+
+        <a href="#inicio" class="logo">
+            <img src="logo.png" alt="logo SmartCoffee">
+        </a>
+
+        <div class="menu">
+            <a href="#inicio" class="link-menu ativo">Início</a>
+            <a href="#sobre" class="link-menu">Sobre</a>
+            <a href="#cafes" class="link-menu">Cardápio</a>
+            <a href="#sacola" class="link-menu">Sacola</a>
+            <a href="#contato" class="link-menu">Contato</a>
+        </div>
+
+        <a href="#cafes" class="botao-cabecalho">
+            Conheça nossos cafés <span>↗</span>
+        </a>
+
+    </div>
+
+
+    <!-- BANNER PRINCIPAL -->
+    <section id="inicio" class="banner">
+
+        <img
+            class="banner-imagem"
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1800&q=85"
+            alt="Café preparado em uma cafeteria"
+        >
+
+        <div class="banner-sombra"></div>
+
+        <div class="banner-conteudo">
+
+            <p class="destaque">SEU MOMENTO, SEU CAFÉ</p>
+
+            <h1>
+                Café que conecta
+                <span>pessoas.</span>
+            </h1>
+
+            <p class="descricao">
+                Mais que café, uma experiência feita para aproveitar
+                cada momento, compartilhar ideias e criar boas lembranças.
+            </p>
+
+            <a href="#cafes" class="botao">
+                Conheça nosso cardápio <span>↗</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SOBRE -->
+    <section id="sobre" class="sobre">
+
+        <div class="sobre-imagem">
+            <img
+                src="ambiente.png"
+                alt="Ambiente acolhedor da SmartCoffee"
+                loading="lazy"
+            >
+        </div>
+
+        <div class="sobre-conteudo">
+
+            <p class="rotulo">QUEM SOMOS</p>
+
+            <h2>
+                Mais sabor,
+                <span>mais conexão.</span>
+            </h2>
+
+            <p class="texto">
+                A SmartCoffee nasceu para unir café, tecnologia
+                e bons momentos. Criamos um espaço acolhedor para
+                estudar, trabalhar, conversar e aproveitar cada xícara.
+            </p>
+
+            <a href="#ambiente" class="link-destaque">
+                Conheça nosso espaço <span>→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CARDÁPIO -->
+    <section id="cafes" class="cafes">
+
+        <div class="cafes-topo">
+            <div>
+                <p class="rotulo">FEITO PARA VOCÊ</p>
+                <h2>Encontre seu <span>favorito.</span></h2>
+            </div>
+
+            <p class="cafes-descricao">
+                Sabores especiais para transformar uma simples pausa
+                em um momento inesquecível.
+            </p>
+        </div>
+
+        <div class="cafes-lista">
+
+            <div class="cafe-card">
+
+                <div class="cafe-imagem">
+                    <img
+                        src="capuccino.png"
+                        alt="Capuccino tradicional"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="cafe-detalhes">
+                    <div>
+                        <h3>Capuccino tradicional</h3>
+                        <p>Café cremoso com espuma suave.</p>
+                    </div>
+
+                    <span class="preco">R$ 14,90</span>
+                </div>
+
+                <button
+                    class="adicionar-cafe"
+                    type="button"
+                    data-nome="Capuccino tradicional"
+                    data-preco="14.90"
+                >
+                    Adicionar à sacola <span>+</span>
+                </button>
+
+            </div>
+
+
+            <div class="cafe-card">
+
+                <div class="cafe-imagem">
+                    <img
+                        src="latte.png"
+                        alt="Latte caramelo"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="cafe-detalhes">
+                    <div>
+                        <h3>Latte caramelo</h3>
+                        <p>Leite cremoso com toque de caramelo.</p>
+                    </div>
+
+                    <span class="preco">R$ 16,90</span>
+                </div>
+
+                <button
+                    class="adicionar-cafe"
+                    type="button"
+                    data-nome="Latte caramelo"
+                    data-preco="16.90"
+                >
+                    Adicionar à sacola <span>+</span>
+                </button>
+
+            </div>
+
+
+            <div class="cafe-card">
+
+                <div class="cafe-imagem">
+                    <img
+                        src="espresso.png"
+                        alt="Espresso tradicional"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="cafe-detalhes">
+                    <div>
+                        <h3>Espresso tradicional</h3>
+                        <p>Intenso, aromático e encorpado.</p>
+                    </div>
+
+                    <span class="preco">R$ 12,90</span>
+                </div>
+
+                <button
+                    class="adicionar-cafe"
+                    type="button"
+                    data-nome="Espresso tradicional"
+                    data-preco="12.90"
+                >
+                    Adicionar à sacola <span>+</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SACOLA -->
+    <section id="sacola" class="sacola">
+
+        <div class="sacola-topo">
+            <p class="rotulo">SEUS ESCOLHIDOS</p>
+            <h2>Sua <span>sacola.</span></h2>
+        </div>
+
+        <div id="sacola-itens" class="sacola-itens">
+            <p class="sacola-vazia">
+                Sua sacola está vazia no momento.
+            </p>
+        </div>
+
+        <div class="sacola-total">
+            <span>Total</span>
+            <strong id="sacola-total">R$ 0,00</strong>
+        </div>
+
+        <button id="limpar-sacola" class="botao-limpar" type="button">
+            Limpar sacola
+        </button>
+
+
+    </section>
+
+
+    <!-- AMBIENTE -->
+    <section id="ambiente" class="ambiente">
+
+        <img
+            src="img/ambiente_imagem.png"
+            alt="Espaço da SmartCoffee"
+            loading="lazy"
+        >
+
+        <div class="ambiente-sombra"></div>
+
+        <div class="ambiente-conteudo">
+
+            <p class="rotulo">SEU ESPAÇO, SUAS IDEIAS</p>
+
+            <h2>
+                Um espaço para
+                <span>boas ideias.</span>
+            </h2>
+
+            <p>
+                Um ambiente moderno e acolhedor para estudar,
+                trabalhar, conversar ou simplesmente tomar um café.
+            </p>
+
+            <a href="#contato" class="botao">
+                Fale com a gente <span>↗</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTATO -->
+    <section id="contato" class="contato">
+
+        <div class="contato-conteudo">
+
+            <p class="rotulo">ENTRE EM CONTATO</p>
+
+            <h2>
+                avalie-nos
+            </h2>
+
+            <p class="texto">
+                envie seu feedback para nós.
+            </p>
+
+        </div>
+
+        <form id="form-contato" class="form-contato">
+
+            <label for="nome">Nome</label>
+            <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Digite seu nome"
+                required
+            >
+
+            <label for="email">E-mail</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Digite seu e-mail"
+                required
+            >
+
+            <label for="mensagem">Mensagem</label>
+            <textarea
+                id="mensagem"
+                name="mensagem"
+                rows="4"
+                placeholder="Escreva sua mensagem"
+                required
+            ></textarea>
+
+            <button type="submit" class="botao">
+                Enviar mensagem <span>↗</span>
+            </button>
+
+            <p id="mensagem-formulario" class="mensagem-formulario"></p>
+
+        </form>
+
+    </section>
+
+
+    <!-- RODAPÉ -->
+    <div class="rodape">
+
+        <a href="#inicio" class="logo">
+            <img src="logo.png" alt="logo SmartCoffee">
+        </a>
+
+        <p>Feito por um estudante SENAI.</p>
+
+        <div class="rodape-links">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#cafes">Cardápio</a>
+            <a href="#contato">Contato</a>
+        </div>
+
+        <div class="rodape-linha"></div>
+
+        <p class="copyright">
+            © 2026 SmartCoffee.
+        </p>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

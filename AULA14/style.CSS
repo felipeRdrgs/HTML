@@ -1,0 +1,191 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 2px solid crimson;
+    background-color: white;
+}
+
+/* TÍTULO E MENU */
+
+.titulo {
+    padding: 20px;
+    background-color: #eeeeee;
+}
+
+.titulo header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.titulo h1 {
+    margin: 0;
+    color: black;
+}
+
+.titulo span {
+    color: #dada07;
+}
+
+.titulo a {
+    text-decoration: none;
+    color: black;
+}
+
+.titulo p {
+    margin-left: 20px;
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+}
+
+.nav a {
+    color: black;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* EFEITO NOS LINKS */
+
+.nav a:hover {
+    color: #dada07;
+    font-size: 18px;
+}
+
+
+/* CONTEÚDO PRINCIPAL */
+
+.conteudo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.conteudo-art {
+    flex: 1;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+.conteudo-img {
+    flex: 1;
+    text-align: center;
+}
+
+.conteudo-img img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+}
+
+
+/* GALERIA */
+
+.galeria {
+    padding: 25px;
+    background-color: #dedede;
+    text-align: center;
+}
+
+.galeria h2,
+.mais-personagens h2 {
+    margin-bottom: 25px;
+}
+
+.imagens {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+figure {
+    margin: 0;
+    text-align: center;
+}
+
+.imagens figure {
+    width: 200px;
+}
+
+.imagens img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    transition: 0.3s;
+}
+
+/* EFEITO NAS IMAGENS */
+
+.imagens img:hover {
+    transform: scale(1.08);
+}
+
+figcaption {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+/* NOVA SEÇÃO */
+
+.mais-personagens {
+    padding: 25px;
+    text-align: center;
+    background-color: white;
+}
+
+
+/* RESPONSIVIDADE SIMPLES */
+
+@media (max-width: 700px) {
+
+    .titulo header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .titulo p {
+        margin-left: 0;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .conteudo {
+        flex-direction: column;
+    }
+
+    .conteudo-art,
+    .conteudo-img {
+        width: 100%;
+    }
+
+}
+
+
+/* OUTRAS SKINS */
+
+.outras-skins {
+    padding: 25px;
+    text-align: center;
+    background-color: #dedede;
+}
+
+.outras-skins h2 {
+    margin-bottom: 25px;
+}

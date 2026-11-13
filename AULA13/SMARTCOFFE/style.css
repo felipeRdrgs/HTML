@@ -1,0 +1,895 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+:root {
+    --marrom-escuro: #35221d;
+    --marrom: #3e2723;
+    --laranja: #c96f35;
+    --laranja-claro: #f2b47f;
+    --creme: #faf6f0;
+    --bege: #f0e5d8;
+    --texto: #74665c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 25px;
+}
+
+body {
+    background: var(--creme);
+    color: var(--marrom);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.logo {
+    width: 120px;
+    height: 120px;
+    gap: 20px;
+    transform: translateY(30px);
+    margin-top: auto;
+}
+.cabecalho {
+    min-height: 82px;
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: var(--marrom-escuro);
+}
+
+.logo {
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #f39a58;
+    font-style: italic;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.link-menu {
+    position: relative;
+    color: #e6d9cf;
+    font-size: 13px;
+    transition: color 0.3s;
+}
+
+.link-menu:hover,
+.link-menu.ativo {
+    color: #f2b47f;
+}
+
+.link-menu::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--laranja);
+    transition: width 0.3s;
+}
+
+.link-menu:hover::after,
+.link-menu.ativo::after {
+    width: 100%;
+}
+
+.botao-cabecalho {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 17px;
+    border: 1px solid #705344;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    white-space: nowrap;
+    transition: background 0.3s;
+}
+
+.botao-cabecalho span {
+    color: var(--laranja-claro);
+}
+
+.botao-cabecalho:hover {
+    background: var(--laranja);
+}
+
+
+/* =========================
+   BANNER PRINCIPAL
+========================= */
+
+.banner {
+    min-height: 610px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 75px 8%;
+    overflow: hidden;
+    background: var(--marrom-escuro);
+}
+
+.banner-imagem {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.banner-sombra {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(30, 18, 14, 0.91) 0%,
+        rgba(30, 18, 14, 0.70) 43%,
+        rgba(30, 18, 14, 0.12) 100%
+    );
+    pointer-events: none;
+}
+
+.banner-conteudo {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+    color: white;
+    animation: subir 0.8s ease both;
+}
+
+.destaque,
+.rotulo {
+    color: var(--laranja);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.banner .destaque {
+    margin-bottom: 23px;
+    color: var(--laranja-claro);
+}
+
+.banner h1 {
+    max-width: 600px;
+    font-family: Georgia, serif;
+    font-size: clamp(44px, 6vw, 70px);
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+}
+
+.banner h1 span {
+    display: block;
+    color: var(--laranja-claro);
+    font-style: italic;
+}
+
+.banner .descricao {
+    max-width: 440px;
+    margin-top: 24px;
+    color: #e5d9d0;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+    margin-top: 27px;
+    padding: 16px 23px;
+    border: 1px solid var(--laranja);
+    border-radius: 4px;
+    background: var(--laranja);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.3s,
+        transform 0.3s;
+}
+
+.botao span {
+    font-size: 17px;
+}
+
+.botao:hover {
+    background: #a94e20;
+    transform: translateY(-2px);
+}
+
+.frase-banner {
+    margin-top: 45px;
+    color: #d1c0b3;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   SOBRE
+========================= */
+
+.sobre {
+    padding: 100px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 75px;
+}
+
+.sobre-imagem {
+    height: 410px;
+    overflow: hidden;
+    background: var(--bege);
+}
+
+.sobre-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.sobre-imagem:hover img {
+    transform: scale(1.04);
+}
+
+.sobre-conteudo h2,
+.cafes-topo h2,
+.sacola-topo h2,
+.contato-conteudo h2 {
+    margin-top: 18px;
+    font-family: Georgia, serif;
+    font-size: clamp(34px, 4vw, 46px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.sobre-conteudo h2 span {
+    display: block;
+    color: var(--laranja);
+    font-style: italic;
+}
+
+.texto {
+    margin-top: 22px;
+    color: var(--texto);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.link-destaque {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 27px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #d8b79c;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.link-destaque span {
+    color: var(--laranja);
+    font-size: 19px;
+}
+
+
+/* =========================
+   CARDÁPIO
+========================= */
+
+.cafes {
+    padding: 90px 8% 105px;
+    background: var(--bege);
+}
+
+.cafes-topo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 38px;
+}
+
+.cafes-topo h2 span {
+    color: var(--laranja);
+    font-style: italic;
+}
+
+.cafes-descricao {
+    max-width: 320px;
+    color: var(--texto);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.cafes-lista {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.cafe-card {
+    min-width: 0;
+    padding: 13px;
+    background: var(--creme);
+    border: 1px solid rgba(62, 39, 35, 0.07);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cafe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(62, 39, 35, 0.09);
+}
+
+.cafe-imagem {
+    height: 240px;
+    overflow: hidden;
+    background: #e5d6c7;
+}
+
+.cafe-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.cafe-card:hover .cafe-imagem img {
+    transform: scale(1.05);
+}
+
+.cafe-detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 7px;
+}
+
+.cafe-detalhes h3 {
+    font-family: Georgia, serif;
+    font-size: 18px;
+}
+
+.cafe-detalhes p {
+    margin-top: 8px;
+    color: var(--texto);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.preco {
+    color: var(--laranja);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.adicionar-cafe {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 7px 7px;
+    border: 0;
+    border-top: 1px solid #e7dcd0;
+    background: transparent;
+    color: var(--marrom);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.adicionar-cafe span {
+    color: var(--laranja);
+    font-size: 21px;
+}
+
+.adicionar-cafe:hover {
+    color: var(--laranja);
+}
+
+
+/* =========================
+   SACOLA
+========================= */
+
+.sacola {
+    padding: 85px 8%;
+}
+
+.sacola-topo {
+    margin-bottom: 28px;
+}
+
+.sacola-topo h2 span {
+    color: var(--laranja);
+    font-style: italic;
+}
+
+.sacola-itens {
+    padding: 24px;
+    border: 1px solid #e4d7c9;
+    background: #fffdf9;
+}
+
+.sacola-vazia {
+    color: var(--texto);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.item-sacola {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e4d7c9;
+}
+
+.item-sacola:first-child {
+    padding-top: 0;
+}
+
+.item-sacola:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.item-sacola p {
+    font-size: 14px;
+}
+
+.item-sacola small {
+    display: block;
+    margin-top: 5px;
+    color: var(--texto);
+}
+
+.item-sacola button {
+    margin-top: 8px;
+    padding: 6px 10px;
+    border: 1px solid #e4d7c9;
+    background: transparent;
+    cursor: pointer;
+}
+
+.sacola-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 0;
+    border-bottom: 1px solid #e4d7c9;
+}
+
+.sacola-total strong {
+    color: var(--laranja);
+    font-size: 20px;
+}
+
+.botao-limpar {
+    margin-top: 18px;
+    padding: 12px 18px;
+    border: 1px solid #d8c5b4;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--marrom);
+    cursor: pointer;
+}
+
+.botao-limpar:hover {
+    background: var(--bege);
+}
+
+.aviso-sacola {
+    margin-top: 12px;
+    color: var(--texto);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   AMBIENTE
+========================= */
+
+.ambiente {
+    min-height: 450px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 75px 8%;
+    overflow: hidden;
+    background: var(--marrom-escuro);
+}
+
+.ambiente > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ambiente-sombra {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(36, 23, 17, 0.92),
+        rgba(36, 23, 17, 0.48)
+    );
+}
+
+.ambiente-conteudo {
+    position: relative;
+    z-index: 1;
+    max-width: 550px;
+    color: white;
+}
+
+.ambiente-conteudo h2 {
+    margin-top: 20px;
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 5vw, 55px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.ambiente-conteudo h2 span {
+    display: block;
+    color: var(--laranja-claro);
+    font-style: italic;
+}
+
+.ambiente-conteudo > p:not(.rotulo) {
+    margin-top: 20px;
+    color: #e5d9d0;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* =========================
+   CONTATO
+========================= */
+
+.contato {
+    padding: 95px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.contato-conteudo h2 span {
+    color: var(--laranja);
+}
+
+.form-contato {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-contato label {
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.form-contato input,
+.form-contato textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 14px;
+    border: 1px solid #dfd2c5;
+    border-radius: 3px;
+    outline: none;
+    background: #fffdf9;
+    color: var(--marrom);
+    font-size: 13px;
+}
+
+.form-contato input:focus,
+.form-contato textarea:focus {
+    border-color: var(--laranja);
+}
+
+.form-contato textarea {
+    resize: vertical;
+}
+
+.form-contato .botao {
+    align-self: flex-start;
+    margin-top: 0;
+}
+
+.mensagem-formulario {
+    margin-top: 14px;
+    color: var(--marrom);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.rodape {
+    padding: 40px 8% 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: var(--marrom-escuro);
+}
+
+.rodape > p {
+    color: #d2c5bb;
+    font-size: 12px;
+}
+
+.rodape-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.rodape-links a {
+    color: #d2c5bb;
+    font-size: 12px;
+}
+
+.rodape-links a:hover,
+.voltar-topo:hover {
+    color: var(--laranja-claro);
+}
+
+.rodape-linha {
+    width: 100%;
+    height: 1px;
+    background: #4a352b;
+}
+
+.copyright {
+    width: 100%;
+    color: #a99a8e;
+    font-size: 11px;
+}
+
+
+/* =========================
+   ANIMAÇÃO
+========================= */
+
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 950px) {
+    .cabecalho {
+        padding: 20px 5%;
+        gap: 15px;
+    }
+
+    .menu {
+        gap: 15px;
+    }
+
+    .botao-cabecalho {
+        padding: 11px;
+    }
+
+    .sobre,
+    .contato {
+        gap: 35px;
+    }
+
+    .cafes-lista {
+        gap: 15px;
+    }
+
+    .cafe-imagem {
+        height: 200px;
+    }
+}
+
+
+/* =========================
+   CELULARES
+========================= */
+
+@media (max-width: 700px) {
+    .cabecalho {
+        padding: 20px 6%;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .menu {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+        padding-top: 15px;
+        border-top: 1px solid #4a352b;
+    }
+
+    .link-menu {
+        font-size: 11px;
+    }
+
+    .botao-cabecalho {
+        font-size: 10px;
+    }
+
+    .banner {
+        min-height: 570px;
+        padding: 65px 7%;
+    }
+
+    .banner-sombra {
+        background: linear-gradient(
+            90deg,
+            rgba(30, 18, 14, 0.91),
+            rgba(30, 18, 14, 0.48)
+        );
+    }
+
+    .banner h1 {
+        font-size: clamp(42px, 10vw, 58px);
+    }
+
+    .banner .descricao {
+        font-size: 14px;
+    }
+
+    .frase-banner {
+        margin-top: 35px;
+    }
+
+    .sobre {
+        grid-template-columns: 1fr;
+        padding: 70px 7%;
+        gap: 35px;
+    }
+
+    .sobre-imagem {
+        height: 320px;
+    }
+
+    .cafes {
+        padding: 70px 7%;
+    }
+
+    .cafes-topo {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cafes-lista {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .cafe-imagem {
+        height: 270px;
+    }
+
+    .cafe-detalhes {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .sacola {
+        padding: 70px 7%;
+    }
+
+    .ambiente {
+        min-height: 430px;
+        padding: 65px 7%;
+    }
+
+    .contato {
+        grid-template-columns: 1fr;
+        padding: 70px 7%;
+        gap: 35px;
+    }
+
+    .rodape {
+        padding: 35px 7% 25px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* CELULARES PEQUENOS */
+
+@media (max-width: 380px) {
+    .menu {
+        gap: 6px;
+    }
+
+    .link-menu {
+        font-size: 10px;
+    }
+
+    .botao-cabecalho {
+        padding: 9px;
+        font-size: 9px;
+    }
+
+    .banner h1 {
+        font-size: 39px;
+    }
+
+    .cafe-detalhes {
+        flex-direction: column;
+    }
+}
