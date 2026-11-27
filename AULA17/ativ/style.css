@@ -1,0 +1,18 @@
+
+body {
+    background-color: #222;
+}
+
+.card img {
+    height: 250px;
+    object-fit: contain;
+    background-color: #111;
+}
+
+.card {
+    border: 1px solid #444;
+}
+
+.navbar-brand span {
+    color: red;
+}
